@@ -1,0 +1,1 @@
+java  -Dfile.sourceFilePath=D:\doc-2-pdf\doc -Dfile.destFilePath=D:\doc-2-pdf\pdf -jar word-pdf-client.jar

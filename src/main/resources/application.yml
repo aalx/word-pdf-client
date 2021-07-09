@@ -1,0 +1,12 @@
+# Make the application available at http://localhost:9000
+
+file:
+  conertServerUrl: ${CONERT_SERVER_URL:http://192.168.168.220:8080/convert-issuer}
+  sourceFilePath: ${SOURCE_FILE_PATH:}
+  destFilePath: ${DEST_FILE_PATH:}
+logging:
+  level:
+    com.cssca: DEBUG
+
+
+
