@@ -9,7 +9,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 import java.io.*;
-import java.util.concurrent.TimeUnit;
 
 public class FileConvert extends Thread{
     private String serverUrl;
@@ -25,7 +24,7 @@ public class FileConvert extends Thread{
         try {
             this.word2Pdf(this.sourceFile, this.destFile);
         }catch (Exception e){
-            System.out.println(this.sourceFile+"---转换失败。"+e.getMessage());
+            System.out.println(this.sourceFile+"---Convert failed . "+e.getMessage());
         }
     }
 
@@ -63,12 +62,12 @@ public class FileConvert extends Thread{
                    }
                }catch (Exception e){
 //                   e.printStackTrace();
-                   System.out.println("保存PDF失败，"+e.getMessage());
+                   System.out.println("Save pdf failed，"+e.getMessage());
                }
-               System.out.println(outputFile.getAbsoluteFile()+"  保存成功。");
+               System.out.println(outputFile.getAbsoluteFile()+"  save sucess。");
             } else {
                 httpClient.close();
-                throw new RuntimeException("服务器响应错误！code:" + startCode);
+                throw new RuntimeException("Server reponse error code:" + startCode);
             }
         }catch (Exception e){
             e.printStackTrace();
